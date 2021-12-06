@@ -12,10 +12,11 @@ const changeRes = (res) => {
 };
 
 const server = () => {
-  let G = {};
-
-  G._get = {};
-  G._post = {};
+  let G = {
+    _get: {},
+    _post: {},
+    staticPath: "static",
+  };
 
   let app = (req, res) => {
     // 扩展res
@@ -56,6 +57,10 @@ const server = () => {
 
   app.post = (str, cb) => {
     G._post[str] = cb;
+  };
+
+  app.static = (staticPath) => {
+    G.staticPath = staticPath;
   };
 
   return app;
