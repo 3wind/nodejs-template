@@ -1,0 +1,20 @@
+# Editor
+.idea
+#忽略.vscode下文件，但保留用户片段
+!.vscode
+.vscode/*
+!.vscode/*.code-snippets
+
+.history
+
+# Dependencies
+/node_modules
+**/node_modules
+
+# Production
+/dist
+output
+
+# config
+package-lock.json
+yarn.lock
